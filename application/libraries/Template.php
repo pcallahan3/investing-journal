@@ -1,12 +1,4 @@
 
-/**
- * Created by PhpStorm.
- * User: Patrick
- * Date: 6/29/2018
- * Time: 8:21 PM
- */
-
-
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  class Template {
      var $ci;
