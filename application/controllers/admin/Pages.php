@@ -6,7 +6,7 @@ class Pages extends CI_Controller {
 
     public function index()
     {
-        die('Pages');
-        //$this->load->view('welcome_message');
+        //Load the template
+        $this->template->load('admin','default', 'dashboard');
     }
 }

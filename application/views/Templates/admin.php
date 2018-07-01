@@ -40,6 +40,19 @@
 <main role="main" class="container">
 
 
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item"><?php echo anchor('admin/pages/add', 'Add new page'); ?></li>
+                <li class="list-group-item"><?php echo anchor('admin/subjects/add', 'Add new subject'); ?></li>
+                <li class="list-group-item"><?php echo anchor('admin/users/add', 'Add new user'); ?></li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <!-- Load main view -->
+            <?php $this->load->view($main) ?>
+        </div>
+    </div>
 </main><!-- /.container -->
 
 <!-- Bootstrap core JavaScript
