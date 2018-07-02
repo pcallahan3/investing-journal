@@ -10,8 +10,23 @@ class Subjects extends CI_Controller {
     }
 
     public function add(){
-        //Load the template
-        $this->template->load('admin','default', 'subjects/add');
+
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[3]');
+
+        if($this->form_validation->run() == FALSE){
+            //Load template
+            $this->template->load('admin','default', 'subjects/add');
+        }
+        else{
+            //Create POST array
+            $data = array(
+                'name' => $this->input->post('name')
+            );
+
+            //Insert subjects
+            $this->Subject_model->add($data);
+        }
+
     }
 
     public function edit(){
