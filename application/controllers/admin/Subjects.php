@@ -25,6 +25,19 @@ class Subjects extends CI_Controller {
 
             //Insert subjects
             $this->Subject_model->add($data);
+
+            //Activity array
+            $data =  array(
+                'resource_id' => $this->db->insert_id(),
+                'type'        => 'subject',
+                'action'      => 'added',
+                'user_id'     => '1',
+                'message'     => 'A subject was added ('.$data["name"].')'
+            );
+
+            //Insert activities
+            $this->Activity_model->add($data);
+
         }
 
     }
